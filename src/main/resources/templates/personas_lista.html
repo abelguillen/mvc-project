@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo spring-mvc</title>
+	</head>
+	<body>
+		<h1>Demo spring-mvc</h1>
+		<p>Lista de personas</p>
+		<div>
+			<table cellspacing="0" width="100%">
+			    <thead>
+			        <tr>
+			            <th>NOMBRE</th>
+			            <th>APELLIDO</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="p : ${personas}">
+			            <td><span th:text="${p.nombre}"></span></td>
+			            <td><span th:text="${p.apellido}"></span></td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+	</body>
+</html>
