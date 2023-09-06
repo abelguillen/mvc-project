@@ -10,14 +10,19 @@
 			<table cellspacing="0" width="100%">
 			    <thead>
 			        <tr>
+			        	<th>ID</th>
 			            <th>NOMBRE</th>
 			            <th>APELLIDO</th>
+			            <th>EDITAR</th>
 			        </tr>
 			    </thead>
 			    <tbody>
 			        <tr th:each="p : ${personas}">
+			        	<td><span th:text="${p.id}"></span></td>
 			            <td><span th:text="${p.nombre}"></span></td>
 			            <td><span th:text="${p.apellido}"></span></td>
+			            <td><a th:href="@{'/personas/actualizar/' + ${p.id}}">editar</a></td>
+			            <td><a th:href="@{'/personas/eliminar/' + ${p.id}}">eliminar</a></td>
 			        </tr>
 			    </tbody>
 			</table>
