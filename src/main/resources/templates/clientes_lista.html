@@ -13,6 +13,7 @@
 			            <th>NOMBRE</th>
 			            <th>APELLIDO</th>
 			            <th>DIRECCION</th>
+			            <th>EDITAR</th>
 			        </tr>
 			    </thead>
 			    <tbody>
@@ -20,6 +21,8 @@
 			            <td><span th:text="${p.nombre}"></span></td>
 			            <td><span th:text="${p.apellido}"></span></td>
 			            <td><span th:text="${p.direccion}"></span></td>
+			            <td><a th:href="@{'/clientes/actualizar/' + ${p.id}}">editar</a></td>
+			            <td><a th:href="@{'/clientes/actualizar/' + ${p.id}}">editar</a></td>
 			        </tr>
 			    </tbody>
 			</table>
