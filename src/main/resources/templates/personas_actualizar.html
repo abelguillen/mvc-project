@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo spring-mvc</title>
+	</head>
+	<body>
+		<h1>Demo spring-mvc</h1>
+		<p>Modulo personas</p>
+		<h5>Actualice la persona</h5>
+		<form action="/personas/actualizar" method="POST">
+			<input style="display:none;" th:value=${persona.id} type="text" id="id" name="id">
+			<label for="nombre">Nombre:</label><br>
+			<input th:value=${persona.nombre} type="text" id="nombre" name="nombre"><br>
+			<label for="apellido">Apellido:</label><br>
+			<input th:value=${persona.apellido} type="text" id="apellido" name="apellido"><br><br>
+			<input type="submit" value="Submit">
+		</form>
+		<br></br>
+		<input type="button" value="Pagina anterior" onClick="history.go(-1);">	
+	</body>
+</html>
