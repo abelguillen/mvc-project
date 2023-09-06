@@ -10,6 +10,7 @@
 			<table cellspacing="0" width="100%">
 			    <thead>
 			        <tr>
+						<th>ID</th>
 			            <th>NOMBRE</th>
 			            <th>APELLIDO</th>
 			            <th>DIRECCION</th>
@@ -18,11 +19,12 @@
 			    </thead>
 			    <tbody>
 			        <tr th:each="p : ${clientes}">
+						<td><span th:text="${p.id}"></span></td>
 			            <td><span th:text="${p.nombre}"></span></td>
 			            <td><span th:text="${p.apellido}"></span></td>
 			            <td><span th:text="${p.direccion}"></span></td>
 			            <td><a th:href="@{'/clientes/actualizar/' + ${p.id}}">editar</a></td>
-			            <td><a th:href="@{'/clientes/actualizar/' + ${p.id}}">editar</a></td>
+			            <td><a th:href="@{'/clientes/eliminar/' + ${p.id}}">eliminar</a></td>
 			        </tr>
 			    </tbody>
 			</table>
