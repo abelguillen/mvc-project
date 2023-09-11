@@ -7,5 +7,8 @@ import com.aguillen.mvcproject.entity.Persona;
 
 @Repository
 public interface PersonaRepository extends CrudRepository<Persona, Long> {
+	
+	public Persona findByNombre(String nombre);
+	public Persona findByApellido(String apellido);
 
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo spring-mvc</title>
+	</head>
+	<br>
+		<h1>Demo spring-mvc</h1>
+		<p>Modulo personas</p>
+		<h5>Buscar persona por apellido:</h5>
+		<form action="/personas/buscar/apellido" method="post">
+    		<label for="apellido">Apellido:</label>
+    		<input type="text" id="apellido" name="apellido">
+    		<button type="submit">Buscar</button>
+		</form>
+		<br></br>
+		<span style="text-align:center;" th:text="${id}"></span>
+		<span style="text-align:center;" th:text="${nombre}"></span>
+		<span style="text-align:center;" th:text="${apellido}"></span>
+		<br></br>
+		<input type="button" value="Pagina anterior" onClick="history.go(-1);">	
+	</body>
+</html>
