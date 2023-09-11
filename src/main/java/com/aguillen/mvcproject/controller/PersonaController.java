@@ -83,5 +83,37 @@ public class PersonaController {
 		return "redirect:" + "/personas/lista";
 	}
 	
+	@GetMapping("/buscar/nombre")
+	public String buscarNombre() {
+		return "personas_buscarNombre";
+	}
+	
+	@PostMapping("/buscar/nombre")
+	public String buscarNombre(
+			@RequestParam(value = "nombre") String nombre,
+			Model template) {
+		Persona persona = repository.findByNombre(nombre);
+		template.addAttribute("id", persona.getId());
+		template.addAttribute("nombre", persona.getNombre());
+		template.addAttribute("apellido", persona.getApellido());
+		return "personas_buscarNombre";
+	}
+	
+	@GetMapping("/buscar/apellido")
+	public String buscarApellido() {
+		return "personas_buscarApellido";
+	}
+	
+	@PostMapping("/buscar/apellido")
+	public String buscarApellido(
+			@RequestParam(value = "apellido") String apellido,
+			Model template) {
+		Persona persona = repository.findByApellido(apellido);
+		template.addAttribute("id", persona.getId());
+		template.addAttribute("nombre", persona.getNombre());
+		template.addAttribute("apellido", persona.getApellido());
+		return "personas_buscarApellido";
+	}
+	
 
 }
