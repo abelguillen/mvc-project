@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Demo spring-mvc</title>
+	</head>
+	<br>
+		<h1>Demo spring-mvc</h1>
+		<p>Modulo clientes</p>
+		<h5>Buscar cliente por nombre:</h5>
+		<form action="/clientes/buscar/nombre" method="post">
+    		<label for="nombre">Nombre:</label>
+    		<input type="text" id="nombre" name="nombre">
+    		<button type="submit">Buscar</button>
+		</form>
+		<br></br>
+		<span style="text-align:center;" th:text="${id}"></span>
+		<span style="text-align:center;" th:text="${nombre}"></span>
+		<span style="text-align:center;" th:text="${apellido}"></span>
+		<span style="text-align:center;" th:text="${direccion}"></span>
+		<br></br>
+		<input type="button" value="Pagina anterior" onClick="history.go(-1);">	
+	</body>
+</html>

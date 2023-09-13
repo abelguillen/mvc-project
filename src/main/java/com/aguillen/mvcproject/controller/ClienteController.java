@@ -84,4 +84,37 @@ public class ClienteController {
 		}
 		return "redirect:" + "/clientes/lista";
 	}
+	
+	@GetMapping("/buscar/nombre")
+	public String buscarNombre() {
+		return "clientes_buscarNombre";
+	}
+	
+	@PostMapping("/buscar/nombre")
+	public String buscarNombre(
+			@RequestParam(value = "nombre") String nombre,
+			Model template) {
+		Cliente cliente = repository.findByNombre(nombre);
+		template.addAttribute("id", cliente.getId());
+		template.addAttribute("nombre", cliente.getNombre());
+		template.addAttribute("apellido", cliente.getApellido());
+		template.addAttribute("apellido", cliente.getDireccion());
+		return "clientes_buscarNombre";
+	}
+	
+	@GetMapping("/buscar/apellido")
+	public String buscarApellido() {
+		return "clientes_buscarApellido";
+	}
+	
+	@PostMapping("/buscar/apellido")
+	public String buscarApellido(
+			@RequestParam(value = "apellido") String apellido,
+			Model template) {
+		Cliente cliente = repository.findByApellido(apellido);
+		template.addAttribute("id", cliente.getId());
+		template.addAttribute("nombre", cliente.getNombre());
+		template.addAttribute("apellido", cliente.getApellido());
+		return "clientes_buscarApellido";
+	}
 }
